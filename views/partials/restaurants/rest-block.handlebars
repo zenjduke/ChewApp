@@ -1,0 +1,15 @@
+<tr class="w3-display-container">
+	<td>{{name}}
+	<td>{{type}}</td>
+	<td>{{location}}</td>
+	<td>{{price}}</td>
+	<td>{{rating}}</td>
+	<td><button class="change-visit w3-button w3-border" data-id="{{id}}" data-newvisit="{{visit}}">
+		{{#if visit}}I've eaten here.{{else}}One can dream.{{/if}}
+	</button></td>
+	<td><i class="delete-restaurant w3-large fa fa-trash"
+ 		data-id="{{this.id}}"></i></td>
+
+</tr>
+
+
