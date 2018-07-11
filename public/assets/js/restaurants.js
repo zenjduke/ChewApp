@@ -22,7 +22,7 @@ $(function() {
     );
   });
 
-  $(".add-restaurant").on("submit", function(event) {
+  $(".add-restaurant").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
