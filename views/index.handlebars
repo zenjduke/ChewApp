@@ -10,42 +10,44 @@
     <p></p>
 </div>
 
-<hr style="height:10px max-width:840px">
-
 <div class="body-content">
 
-<h2>Wish List.</h2>
+<div class="table-background">
 
-<table class="w3-table-all w3-hoverable">
+  <div class="w3-card"><h2>To Visit.</h2></div>
+
+  <table class="w3-table w3-bordered w3-border w3-centered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Location</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Visited?</th>
+          <th>Update</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+    {{#each restaurants}}
+      {{#unless devoured}}
+        {{> restaurants/rest-block visit=true}}
+      {{/unless}}
+    {{/each}}
+  </table>
+
+<div class="w3-card"><h2>Dined &amp; Devoured.</h2></div>
+
+<table class="w3-table w3-table-hover w3-bordered w3-border w3-centered">
     <thead>
-      <tr class="w3-light-grey">
+      <tr>
         <th>Name</th>
         <th>Type</th>
         <th>Location</th>
         <th>Price</th>
         <th>Rating</th>
         <th>Visited?</th>
-        <th>Remove</th>
-      </tr>
-    </thead>
-  {{#each restaurants}}
-    {{#unless devoured}}
-      {{> restaurants/rest-block visit=true}}
-    {{/unless}}
-  {{/each}}
-</table>
-
-<h2>Dined &amp; Devoured.</h2>
-
-<table class="w3-table-all w3-hoverable">
-    <thead>
-      <tr class="w3-light-grey">
-        <th>Name</th>
-        <th>Type</th>
-        <th>Location</th>
-        <th>Price</th>
-        <th>Rating</th>
-        <th>Visited?</th>
+        <th>Update</th>
         <th>Remove</th>
       </tr>
     </thead>
@@ -55,6 +57,7 @@
     {{/if}}
   {{/each}}
 </table>
+</div>
 
 <div style="clear: both" class="btn-div">
 
@@ -65,130 +68,62 @@
 
 
 
+<!-- The Add Restaurant Modal -->
 
-</div>
-
-<!-- The Modal -->
-<div id="add-modal" class="w3-modal w3-card-4">
-  <div class="w3-modal-content w3-animate-opacity">
-
-    <header class="w3-container modal-head"> 
-        <h1>Add A Restaurant</h1>
-    </header>
-
+<div id="add-modal" class="w3-modal w3-display-middle">
+  <div class="w3-modal-content">
     <div class="w3-container">
-
-      <form class="add-rest">
-
-      <div class="form-group">
-        <label for="rest">Name:</label>
-        <input class="w3-input" type="text" id="name" name="name">
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Type:</label>
-        <input class="w3-input" type="text" id="type" name="type">
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Location:</label>
-        <input class="w3-input" type="text" id="location" name="location">
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Price Range ($-$$$$):</label>
-        <input class="w3-input" type="text" id="price" name="price">
-      </div>
-
-      <div class="form-group radio-field">
-          <div class="radio-div">
-            <label for="devoured">Dined Here?</label><br>
-            <label>Yes!</label>
-            <input class="w3-input" type="radio" name="devoured" value="1" checked>
-            <label>Not yet.</label>
-            <input class="w3-input" type="radio" name="devoured" value="0">
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Rating 1—10:</label>
-        <input class="w3-input" type="text" id="rating" name="rating">
-      </div>
-
+      <h1 class="modal-head">Add A Restaurant</h1>  
+      <form>
+        <div class="form-group">
+          <label for="rest">Name:</label>
+          <input class="w3-input" type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="rest">Type:</label>
+          <input class="w3-input" type="text" id="type" name="type">
+        </div>
+        <div class="form-group">
+          <label for="rest">Location:</label>
+          <input class="w3-input" type="text" id="location" name="location">
+        </div>
+        <div class="form-group">
+          <label for="rest">Price Range ($-$$$$):</label>
+          <input class="w3-input" type="text" id="price" name="price">
+        </div>
+        <div class="form-group radio-field">
+              <label for="devoured">Dined Here?</label><br>
+              <label>Yes!</label>
+              <input class="w3-input" type="radio" name="devoured" value="1" checked>
+              <label>Not yet.</label>
+              <input class="w3-input" type="radio" name="devoured" value="0">
+        </div>
+        <div class="form-group">
+          <label for="rest">Rating 1—10:</label>
+          <input class="w3-input" type="text" id="rating" name="rating">
+        </div>
       </form>
 
+      <button type="submit" class="add-restaurant w3-card-4 w3-left">Add</button>
+      <span onclick="document.getElementById('add-modal').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
     </div>
-
-    <footer class="w3-container modal-foot">
-        <button type="submit" class="add-restaurant w3-button w3-border w3-left">Add</button>
-        <span onclick="document.getElementById('add-modal').style.display='none'" class="w3-button w3-right">&times;</span>
-    </footer>
-
   </div>
 </div>
 
-{{!-- <!-- The Modal -->
-<div id="update-modal" class="w3-modal w3-card-4">
+<!-- The Update Restaurant Modal -->
+<div id="update-modal" class="w3-modal w3-card-4 w3-animate-opacity w3-display-middle">
   <div class="w3-modal-content w3-animate-opacity">
-
-    <header class="w3-container modal-head"> 
-        <h1>Update Restaurant</h1>
-    </header>
-
-    <div class="w3-container">
-
-      <form class="add-restaurant">
-
-      <div class="form-group">
-        <label for="rest">Name:</label>
-        <input class="w3-input" type="text" id="name" name="name">
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Type:</label>
-        <input class="w3-input" type="text" id="type" name="type">
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Location:</label>
-        <input class="w3-input" type="text" id="location" name="location">
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Price Range ($-$$$$):</label>
-        <input class="w3-input" type="text" id="price" name="price">
-      </div>
-
-      <div class="form-group radio-field">
-          <div class="radio-div">
-            <label for="devoured">Dined Here?</label><br>
-            <label>Yes!</label>
-            <input class="w3-input" type="radio" name="devoured" value="1" checked>
-            <label>Not yet.</label>
-            <input class="w3-input" type="radio" name="devoured" value="0">
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="rest">Rating 1—10:</label>
-        <input class="w3-input" type="text" id="rating" name="rating">
-      </div>
-
-      </form>
-
-    </div>
-
-    <footer class="w3-container modal-foot">
-        <button type="submit" class="w3-button w3-border w3-left">Add</button>
-        <span onclick="document.getElementById('add-modal').style.display='none'" class="w3-button w3-right">&times;</span>
-    </footer>
-
+    <h1 class="modal-head">Under construction.</h1>
+     <span onclick="document.getElementById('update-modal').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
   </div>
 </div>
 
+<div class="w3-bar w3-bottom">
+</div>
 
-
-<h2>Update A Restaurant</h2>
+{{!-- <h2>Update A Restaurant</h2>
 <form id="update-restaurant" class="button-size">
   <select name="id">
 		{{#each restaurants}}
@@ -196,7 +131,6 @@
 		{{/each}}
 	</select>
   <textarea type="text" name="restaurant" placeholder="restaurant"></textarea>
-  <button type="submit" class="w3-btn update-restaurant">Update Restaurant!</button>
 </form> --}}
 
 

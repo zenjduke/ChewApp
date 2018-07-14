@@ -1,90 +1,68 @@
-li {
-    padding: 5px;
-    margin: 20px;
-    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
-    width: 60%;
-  }
+.w3-table {
+  /* Fallback for web browsers that don't support RGBa */
+  background-color: rgb(115, 153, 165);
+  /* RGBa with 0.6 opacity */
+  background-color: rgba(227, 249, 255, 0.7);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
 
-  table {
-    margin: 30px;
-    width: 80%;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .form-group {
-    margin: 20px;
-  }
 
-  .modal-head, .modal-foot {
-    /* background-image: url(../img/planks.jpg);
-    background-size:cover; */
-    background: #4e6363
-  }
+body {
+  background-image: url(../img/interior.jpg);
+  background-size:cover;
+  font-family: 'Markazi Text', serif;
+  font-size: 28px;
+}
 
-  .w3-panel {
-    width: 60%;
-    margin: 20px;
-    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
-    color: white;
-  }
-
-  .w3-bar {
-    background: #7e9a9a;
-  }
-
-  .w3-button {
-    background: white;;
-    margin: 10px;
-    font-size: 18px;
-    color: rgb(2, 2, 2);
-  }
-
-  .add-update {
-    background: #7e9a9a;;
-    margin: 20px;
-    font-size: 24px;
-    color: white;
-  }
-  
-  body {
-    background-image: url(../img/interior.jpg);
-    background-size:cover;
-    font-family: 'Markazi Text', serif;
-    font-size: 28px;
-  }
-
-  .body-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 40px;
-  }
-
-.tagline {
-    color: white;
-    margin-top: 23px;
-    font-family: 'Knewave', cursive;
-  }
-
-h1, h3 {
+h1, h2, h3 {
   color: white;
-  margin-left: 20px;
+  margin: 10px;
   font-family: 'Knewave', cursive;
 }
 
-h2 {
+span {
   color: white;
-  margin-left: 30px;
-  margin-right: 30px;
-  font-family: 'Knewave', cursive;
-  padding: 10px;
+}
+
+table {
+  color: #566868;
+  width: 100% !important;
+  margin-top: 30px;
+}
+
+td {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.add, .update, .add-update, .add-restaurant {
   background: #7e9a9a;
+  margin: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+.body-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+.btn-div{
+  width: 200px;
+}
+
+.form-group {
+  margin: 20px;
+}
+
+.label {
+  font-weight: bold;
 }
 
 .spacer
@@ -93,6 +71,56 @@ h2 {
     height: 35px;
 }
 
-.btn-div{
-  width: 200px;
+.tagline {
+  color: white;
+  margin-top: 24px;
+  font-family: 'Knewave', cursive;
 }
+
+.w3-bar {
+  background: #566868;
+};
+
+.w3-button {
+  background: rgb(255, 255, 255);;
+  margin: 10px;
+  font-size: 18px;
+  color: #7e9a9a;
+}
+
+.w3-bottom {
+  height: 10px;
+}
+
+.w3-card {
+  background: #7e9a9a;
+  /* margin: 20px; */
+}
+
+.w3-modal {
+  max-width: 80%;
+  max-height: 80%;
+  color: #566868;
+  padding: 0;
+  font-size: 22px;
+  background: #7e9a9a;
+}
+
+.update-modal {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.modal-head {
+  color: #7e9a9a;
+  font-size: 28px;
+  margin: 20px;
+  justify-content: center;
+}
+
+.w3-modal-content {
+  width: 100%;
+  height: 100%;
+}
+
+
