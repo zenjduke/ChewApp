@@ -10,7 +10,7 @@ The user logs restaurant experiences by adding each to the MySQL database and ca
 
 ### Demo
 
-The demo of Chew can be found here.
+The demo of Chew can be found [here](https://pure-plateau-44498.herokuapp.com/).
 
 <img width="981" alt="chew" src="https://user-images.githubusercontent.com/35474050/43550423-233f4804-95a9-11e8-8110-98c456e788bb.png">
 
