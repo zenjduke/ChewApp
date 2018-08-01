@@ -1,6 +1,6 @@
 # Chew
 
-### A journal for...
+### A journal for culinary connoisseurs.
 
 Chew is a full stack application built with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). It follows the MVC design pattern; using Node and MySQL to query and route data, and Handlebars and W3CSS to generate and style the HTML.
 
