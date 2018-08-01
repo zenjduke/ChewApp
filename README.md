@@ -10,7 +10,9 @@ The user logs restaurant experiences by adding each to the MySQL database and ca
 
 ### Demo
 
-The demo of the burger eating application can be found here.
+The demo of Chew can be found here.
+
+<img width="981" alt="chew" src="https://user-images.githubusercontent.com/35474050/43550423-233f4804-95a9-11e8-8110-98c456e788bb.png">
 
 ### Installation
 
